@@ -202,7 +202,7 @@ body {
     width: 100%;
     height: 100vh;
     /* background: #C4BBB8; */
-    background: linear-gradient(0deg, #a78aac 0%, #420b37 100%);
+    background: linear-gradient(0deg, black 0%, #420b37 100%);
 }
 
 .art h1 {
@@ -234,7 +234,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 50px;
-    background: linear-gradient(0deg, #420b37 0%, #a78aac 100%);
+    background: linear-gradient(0deg, #420b37 0%, black 100%);
 }
 
 .aboutme h1 {
@@ -433,9 +433,9 @@ body {
 .ProjSection a {
     text-decoration: none;
     padding: 10px;
-    background-color: #622e58;
     transition: 0.5s ease;
     color: #C4BBB8;
+    border: 1px solid #622e58
 }
 
 .ProjSection a:hover {
