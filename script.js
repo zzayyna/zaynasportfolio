@@ -51,6 +51,7 @@ const funFacts = [
     "I've been watching Spiderman for every birthday since I turned 14",
     "I am passionate about accessibility and inclusive design, and pursuing a career in that field is my dream",
     "Stars are my favorite shape ☆",
+    "I love curating playlists for different vibes and moods, or making them for my friends",
 ];
 
 document.getElementById('funFactButton').addEventListener('click', function () {
