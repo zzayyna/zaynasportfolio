@@ -557,7 +557,8 @@ footer {
     color: #ccc;
 }
 
-.prev, .next {
+.prev,
+.next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -577,6 +578,7 @@ footer {
     right: 20px;
 }
 
-.prev:hover, .next:hover {
+.prev:hover,
+.next:hover {
     color: #ccc;
 }
