@@ -233,6 +233,17 @@ html {
     display: block;
 }
 
+.art img {
+    text-decoration: none;
+    color: #C4BBB8;
+    transition: 0.3s ease;
+}
+
+.art img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
 /* ABOUT ME */
 .aboutme {
     height: 800px;
