@@ -9,6 +9,65 @@ html {
     scroll-behavior: smooth;
 }
 
+/* animations */
+
+.revealUpward {
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.revealUpward.active {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.revealLeft {
+    transform: translateX(-100px) !important;
+    opacity: 0 !important;
+    transition: transform 1s ease, opacity 1s ease !important;
+}
+
+.revealLeft.active {
+    transform: translateX(0px) !important;
+    opacity: 1 !important;
+}
+
+.revealRight {
+    transform: translateX(100px) !important;
+    opacity: 0 !important;
+    transition: transform 1s ease, opacity 1s ease !important;
+}
+
+.revealRight.active {
+    transform: translateX(0px) !important;
+    opacity: 1 !important;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 /* nav */
 .nav {
     float: right;
@@ -57,6 +116,7 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    animation: slideInLeft 0.8s ease;
 }
 
 .intro p {
@@ -84,6 +144,7 @@ html {
     margin-top: 100px;
     margin-right: 100px;
     margin-left: -50px;
+    animation: slideInRight 0.8s ease;
 }
 
 /* PROJECT LINKS / CARD LAYOUT */
@@ -255,7 +316,7 @@ html {
 
 /* ABOUT ME */
 .aboutme {
-    height: 800px;
+    height: 400px;
     background: #420b37;
     color: #C4BBB8;
     display: flex;
@@ -351,7 +412,7 @@ html {
 
 /* CONTACT */
 .contact {
-    height: 100vh;
+    height: 60vh;
     background: #000000;
     background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, #420b37 100%);
     color: #C4BBB8;
