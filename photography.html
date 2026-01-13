@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
@@ -17,11 +17,12 @@
 
     <center>
         <div class="nav">
-            <a href="index.html">PORTFOLIO</a>
-            <a href="#">ART</a>
-            <a href="#">ABOUT ME</a>
-            <a href="#">CV</a>
-            <a href="#">CONTACT</a>
+            <a href="#intro"><img src="assets/logo.png" alt="Logo" height="50"
+                    style="float: left; position: relative; margin-right: 10px; bottom:10px; margin-bottom: -30px"></a>
+            <a href="#portfolio">PORTFOLIO</a>
+            <a href="#art">ART</a>
+            <a href="#aboutme">ABOUT ME</a>
+            <a href="#contact">CONTACT</a>
         </div>
     </center>
 
@@ -80,7 +81,7 @@
         </footer>
     </center>
 
- <script>
+    <script>
         const photos = [
             'assets/photo1.jpg',
             'assets/photo1.5.jpg',
@@ -132,7 +133,7 @@
         }
 
         // Keyboard navigation
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             const lightbox = document.getElementById('lightbox');
             if (lightbox && lightbox.classList.contains('active')) {
                 if (e.key === 'ArrowLeft') {
