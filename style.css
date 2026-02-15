@@ -98,7 +98,7 @@ html {
     font-size: 80px;
     margin-left: 100px;
     letter-spacing: -1px;
-    line-height: 70px;
+    line-height: 85px;
 
 }
 
@@ -333,7 +333,7 @@ html {
 }
 
 .aboutyap {
-    width: 900px;
+    width: 850px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -368,8 +368,7 @@ html {
 }
 
 .aboutme img {
-    width: 400px;
-    height: 300px;
+    height: 400px;
     object-fit: cover;
     display: block;
     margin: 20px;
@@ -427,11 +426,25 @@ html {
     flex-direction: row;
 }
 
+.contact a {
+    transition: 0.5s ease;
+}
+
+.contact a:hover {
+    transform: scale(1.1);
+}
+
+.contact img:hover {
+    transform: scale(1.05);
+    background-color: white;
+}
+
 .contact img {
     background-color: #C4BBB8;
     border-radius: 200px;
     padding: 10px;
     margin: 10px;
+    transition: 0.5s ease;
 }
 
 .contact p {
