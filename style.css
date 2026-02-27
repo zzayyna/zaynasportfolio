@@ -160,7 +160,6 @@ html {
     margin: 0 auto;
     background-color: #C4BBB8;
     color: #420b37;
-    /* background: #000000; */
     background: linear-gradient(0deg, #420b37 0%, rgba(0, 0, 0, 1) 100%);
     padding-bottom: 50px;
 
@@ -202,8 +201,6 @@ html {
     display: flex;
     flex-direction: column;
     background-color: #420b37;
-    /* background: #000000;
-    background: linear-gradient(0deg, #420b37 0%, rgba(0, 0, 0, 1) 100%); */
 }
 
 .project img {
@@ -280,7 +277,6 @@ html {
 .art {
     width: 100%;
     height: 100vh;
-    /* background: #C4BBB8; */
     background: linear-gradient(0deg, black 0%, #420b37 100%);
 }
 
@@ -701,4 +697,434 @@ footer {
 .prev:hover,
 .next:hover {
     color: #ccc;
+}
+
+
+/* ============================================
+   RESPONSIVE / MOBILE STYLES
+   ============================================ */
+
+/* ---- Tablet: max-width 1024px ---- */
+@media (max-width: 1024px) {
+    .intro h1 {
+        font-size: 60px;
+        line-height: 65px;
+    }
+
+    .intro img {
+        width: 380px;
+        height: 380px;
+        margin-right: 40px;
+    }
+
+    .intro p,
+    .intro a {
+        width: auto;
+        max-width: 400px;
+    }
+
+    .portfolio h1 {
+        font-size: 100px;
+    }
+
+    .project {
+        width: 340px;
+    }
+
+    .aboutyap {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .aboutme img {
+        height: 300px;
+        width: 300px;
+        object-fit: cover;
+    }
+
+    #funFact {
+        width: 90%;
+    }
+
+    .artthings {
+        gap: 40px;
+    }
+
+    .art img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .ProjSection {
+        width: 90%;
+    }
+
+    .projTitle {
+        flex-direction: column;
+        align-items: center;
+        padding: 60px 30px 30px;
+    }
+
+    .projTitle img {
+        width: 90%;
+        max-width: 500px;
+        margin: 20px auto;
+    }
+
+    .projTitle .inner {
+        padding: 20px;
+    }
+
+    .projTitle p {
+        width: auto;
+    }
+}
+
+/* ---- Mobile: max-width 768px ---- */
+@media (max-width: 768px) {
+
+    /* NAV */
+    .nav {
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 4px;
+        width: calc(100% - 32px);
+    }
+
+    .nav a {
+        padding: 6px 8px;
+        font-size: 13px;
+    }
+
+    .nav a img {
+        height: 36px !important;
+        bottom: 6px !important;
+    }
+
+    /* INTRO */
+    .intro {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 80px 20px 40px;
+        text-align: center;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .intro h1 {
+        font-size: 44px;
+        line-height: 50px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .intro p {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+        font-size: 15px;
+    }
+
+    .intro a {
+        margin-left: 0;
+        width: auto;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .intro img {
+        width: 240px;
+        height: 240px;
+        margin: 30px auto 0;
+        order: -1;
+    }
+
+    .introtext {
+        align-items: center;
+    }
+
+    /* PORTFOLIO */
+    .portfolio {
+        padding: 30px 16px 50px;
+        gap: 24px;
+    }
+
+    .portfolio h1 {
+        font-size: 70px;
+    }
+
+    .portfolio h2 {
+        font-size: 22px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .project {
+        width: calc(100% - 32px);
+        max-width: 420px;
+    }
+
+    .project img {
+        height: 140px;
+    }
+
+    .design,
+    .fullstack,
+    .research-data {
+        gap: 20px;
+        padding: 0 8px;
+    }
+
+    /* ART */
+    .art {
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .art h1 {
+        font-size: 20px;
+        padding: 0 10px;
+    }
+
+    .artthings {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .art img {
+        width: 280px;
+        height: 280px;
+    }
+
+    /* ABOUT ME */
+    .aboutme {
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .aboutme h1 {
+        font-size: 20px;
+        text-align: center;
+        padding: 16px;
+    }
+
+    .aboutyap {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .aboutme img {
+        width: 90%;
+        max-width: 320px;
+        height: 250px;
+        object-fit: cover;
+        margin: 10px auto;
+    }
+
+    .aboutyap p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .funfacts {
+        width: 100%;
+    }
+
+    #funFact {
+        width: 90%;
+        height: auto;
+        min-height: 120px;
+    }
+
+    /* CONTACT */
+    .contact {
+        height: auto;
+        padding: 50px 20px;
+    }
+
+    .contact h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .contact .links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .contact img {
+        height: 40px;
+        padding: 8px;
+    }
+
+    /* PROJECT PAGES */
+    .projTitle {
+        flex-direction: column;
+        align-items: center;
+        padding: 80px 20px 30px;
+        gap: 20px;
+    }
+
+    .projTitle .inner {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .projTitle .inner h1 {
+        font-size: 36px;
+    }
+
+    .projTitle p {
+        width: 100%;
+    }
+
+    .projTitle img {
+        width: 100%;
+        max-width: 340px;
+        margin: 0 auto;
+    }
+
+    .skills {
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 30px 16px;
+    }
+
+    .skills h2 {
+        font-size: 22px;
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+
+    .skillItem {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+
+    .ProjSection {
+        width: 90%;
+        padding-bottom: 40px;
+    }
+
+    .ProjSection .images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .images img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+    }
+
+    .ProjSection iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+
+    .ProjSection a {
+        display: inline-block;
+        text-align: center;
+    }
+
+    .personas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .persona p {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* PHOTO GALLERY */
+    .photoTitle {
+        font-size: 70px;
+        padding-top: 80px;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column {
+        width: 90%;
+        max-width: 420px;
+    }
+
+    /* RESUME */
+    .resume {
+        margin-top: 60px;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    /* FOOTER */
+    footer {
+        padding: 20px;
+        text-align: center;
+    }
+
+    footer img {
+        height: 36px !important;
+        margin: 5px;
+    }
+
+    /* LIGHTBOX on mobile */
+    .prev {
+        left: 5px;
+        padding: 10px;
+        font-size: 28px;
+    }
+
+    .next {
+        right: 5px;
+        padding: 10px;
+        font-size: 28px;
+    }
+
+    .close {
+        top: 10px;
+        right: 16px;
+        font-size: 30px;
+    }
+}
+
+/* ---- Small phones: max-width 400px ---- */
+@media (max-width: 400px) {
+    .intro h1 {
+        font-size: 36px;
+        line-height: 42px;
+    }
+
+    .portfolio h1 {
+        font-size: 52px;
+    }
+
+    .photoTitle {
+        font-size: 52px;
+    }
+
+    .nav a {
+        font-size: 11px;
+        padding: 4px 6px;
+    }
+
+    .projTitle .inner h1 {
+        font-size: 28px;
+    }
 }
