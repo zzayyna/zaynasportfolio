@@ -1,47 +1,294 @@
-/*REVEAL ON SCROLL */
-window.addEventListener('scroll', revealUpward);
+const projectSections = Array.from(document.querySelectorAll('.ProjSection'));
+const projectTimelineTargets = [];
+const projectTimelineLinks = [];
 
-function revealUpward() {
-    var reveals = document.querySelectorAll('.revealUpward');
-    var revealLeft = document.querySelectorAll('.revealLeft');
-    var revealRight = document.querySelectorAll('.revealRight');
+if (projectSections.length) {
+    projectSections.forEach(section => {
+        const paragraphs = Array.from(section.querySelectorAll('p'));
 
-    for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var revealTop = reveals[i].getBoundingClientRect().top;
-        var revealPoint = 150;
+        paragraphs.forEach(paragraph => {
+            if (paragraph.closest('.persona')) {
+                return;
+            }
 
-        if (revealTop < windowHeight - revealPoint) {
-            reveals[i].classList.add('active');
-        } else {
-            reveals[i].classList.remove('active');
+            let next = paragraph.nextElementSibling;
+            while (next?.tagName === 'BR') {
+                next = next.nextElementSibling;
+            }
+
+            const previous = paragraph.previousElementSibling;
+            const followsImage = previous?.matches('img') || previous?.querySelector('img');
+            const precedesImage = next?.matches('img, .images, .logos, .mind-image-row') &&
+                paragraph.querySelector('b, strong') &&
+                paragraph.textContent.trim().length <= 80;
+            const centeredImageText = paragraph.style.textAlign === 'center' &&
+                (followsImage || next?.matches('img, .images, .logos, .mind-image-row'));
+
+            if (centeredImageText || precedesImage) {
+                paragraph.classList.add('image-caption');
+            }
+        });
+    });
+
+    const projectHero = document.querySelector('.projTitle');
+    const projectSkills = document.querySelector('.skills');
+
+    if (projectHero) {
+        const projectIntro = projectHero.querySelector('.inner');
+        const projectImage = projectHero.querySelector(':scope > img');
+
+        if (projectIntro) {
+            projectIntro.classList.add('revealLeft');
         }
+        if (projectImage) {
+            projectImage.classList.add('revealRight');
+        }
+        projectTimelineTargets.push(projectHero);
     }
 
-    for (var i = 0; i < revealLeft.length; i++) {
-        var windowHeight = window.innerHeight;
-        var revealTop = revealLeft[i].getBoundingClientRect().top;
-        var revealPoint = 150;
-
-        if (revealTop < windowHeight - revealPoint) {
-            revealLeft[i].classList.add('active');
-        } else {
-            revealLeft[i].classList.remove('active');
-        }
+    if (projectSkills) {
+        Array.from(projectSkills.children)
+            .filter(child => child.tagName !== 'BR')
+            .forEach(child => child.classList.add('revealUpward'));
+        projectTimelineTargets.push(projectSkills);
     }
 
-    for (var i = 0; i < revealRight.length; i++) {
-        var windowHeight = window.innerHeight;
-        var revealTop = revealRight[i].getBoundingClientRect().top;
-        var revealPoint = 150;
+    projectSections.forEach((section, index) => {
+        section.classList.add(index % 2 === 0 ? 'revealLeft' : 'revealRight');
+        projectTimelineTargets.push(section);
+    });
 
-        if (revealTop < windowHeight - revealPoint) {
-            revealRight[i].classList.add('active');
-        } else {
-            revealRight[i].classList.remove('active');
+    const projectTimeline = document.createElement('nav');
+    projectTimeline.className = 'project-timeline';
+    projectTimeline.setAttribute('aria-label', 'Project sections');
+
+    const projectTimelineList = document.createElement('ol');
+
+    projectTimelineTargets.forEach((target, index) => {
+        const heading = target.querySelector('h1, h2');
+        const label = target.classList.contains('projTitle')
+            ? 'Project overview'
+            : target.classList.contains('skills')
+                ? 'Skills'
+                : heading?.textContent.trim() || `Project section ${index + 1}`;
+        const baseId = label.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || `section-${index + 1}`;
+        let id = target.id || baseId;
+        let suffix = 2;
+
+        while (document.getElementById(id) && document.getElementById(id) !== target) {
+            id = `${baseId}-${suffix}`;
+            suffix += 1;
         }
+        target.id = id;
+
+        const item = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = `#${id}`;
+        link.setAttribute('aria-label', label);
+        link.title = label;
+
+        const timelineLabel = document.createElement('span');
+        timelineLabel.className = 'project-timeline__label';
+        timelineLabel.textContent = label;
+        link.append(timelineLabel);
+
+        if (index === 0) {
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'location');
+        }
+
+        item.append(link);
+        projectTimelineList.append(item);
+        projectTimelineLinks.push(link);
+    });
+
+    projectTimeline.append(projectTimelineList);
+
+    if (projectSkills) {
+        projectSkills.after(projectTimeline);
+    } else if (projectHero) {
+        projectHero.after(projectTimeline);
+    } else {
+        projectSections[0].before(projectTimeline);
     }
 }
+
+const contactSection = document.querySelector('.contact');
+if (contactSection) {
+    Array.from(contactSection.children)
+        .filter(child => child.tagName !== 'BR')
+        .forEach(child => child.classList.add('revealUpward'));
+}
+
+if (projectSections.length) {
+    const projectImages = Array.from(document.querySelectorAll('.projTitle img, .ProjSection img'));
+    const projectLightbox = document.createElement('div');
+    const lightboxImage = document.createElement('img');
+    const lightboxCaption = document.createElement('p');
+    const lightboxClose = document.createElement('button');
+    const lightboxPrevious = document.createElement('button');
+    const lightboxNext = document.createElement('button');
+    let currentImageIndex = 0;
+    let previouslyFocusedElement = null;
+
+    projectLightbox.className = 'project-lightbox';
+    projectLightbox.setAttribute('role', 'dialog');
+    projectLightbox.setAttribute('aria-modal', 'true');
+    projectLightbox.setAttribute('aria-label', 'Image gallery');
+    projectLightbox.hidden = true;
+
+    const lightboxContent = document.createElement('div');
+    lightboxContent.className = 'project-lightbox__content';
+
+    lightboxImage.className = 'project-lightbox__image';
+    lightboxImage.alt = '';
+
+    lightboxCaption.className = 'project-lightbox__caption';
+    lightboxCaption.setAttribute('aria-live', 'polite');
+
+    lightboxClose.className = 'project-lightbox__close';
+    lightboxClose.type = 'button';
+    lightboxClose.setAttribute('aria-label', 'Close image gallery');
+    lightboxClose.textContent = '×';
+
+    lightboxPrevious.className = 'project-lightbox__previous';
+    lightboxPrevious.type = 'button';
+    lightboxPrevious.setAttribute('aria-label', 'Previous image');
+    lightboxPrevious.textContent = '‹';
+
+    lightboxNext.className = 'project-lightbox__next';
+    lightboxNext.type = 'button';
+    lightboxNext.setAttribute('aria-label', 'Next image');
+    lightboxNext.textContent = '›';
+
+    lightboxContent.append(lightboxImage, lightboxCaption);
+    projectLightbox.append(lightboxClose, lightboxPrevious, lightboxNext, lightboxContent);
+    document.body.append(projectLightbox);
+
+    function showProjectImage(index) {
+        currentImageIndex = (index + projectImages.length) % projectImages.length;
+        const image = projectImages[currentImageIndex];
+        const description = image.alt.trim() || `Project image ${currentImageIndex + 1}`;
+
+        lightboxImage.src = image.currentSrc || image.src;
+        lightboxImage.alt = description;
+        lightboxCaption.textContent = `${description} (${currentImageIndex + 1} of ${projectImages.length})`;
+    }
+
+    function openProjectLightbox(image) {
+        previouslyFocusedElement = document.activeElement;
+        showProjectImage(projectImages.indexOf(image));
+        projectLightbox.hidden = false;
+        document.body.classList.add('project-lightbox-open');
+        lightboxClose.focus();
+    }
+
+    function closeProjectLightbox() {
+        if (projectLightbox.hidden) {
+            return;
+        }
+
+        projectLightbox.hidden = true;
+        document.body.classList.remove('project-lightbox-open');
+        lightboxImage.removeAttribute('src');
+        previouslyFocusedElement?.focus();
+    }
+
+    projectImages.forEach(image => {
+        image.classList.add('project-image-zoomable');
+        image.tabIndex = 0;
+        image.setAttribute('role', 'button');
+        image.setAttribute('aria-label', `Enlarge image: ${image.alt || 'project image'}`);
+        image.addEventListener('click', () => openProjectLightbox(image));
+        image.addEventListener('keydown', event => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openProjectLightbox(image);
+            }
+        });
+    });
+
+    lightboxClose.addEventListener('click', closeProjectLightbox);
+    lightboxPrevious.addEventListener('click', () => showProjectImage(currentImageIndex - 1));
+    lightboxNext.addEventListener('click', () => showProjectImage(currentImageIndex + 1));
+    projectLightbox.addEventListener('click', event => {
+        if (event.target === projectLightbox) {
+            closeProjectLightbox();
+        }
+    });
+
+    document.addEventListener('keydown', event => {
+        if (projectLightbox.hidden) {
+            return;
+        }
+
+        if (event.key === 'Escape') {
+            closeProjectLightbox();
+        } else if (event.key === 'ArrowLeft') {
+            event.preventDefault();
+            showProjectImage(currentImageIndex - 1);
+        } else if (event.key === 'ArrowRight') {
+            event.preventDefault();
+            showProjectImage(currentImageIndex + 1);
+        } else if (event.key === 'Tab') {
+            event.preventDefault();
+            (document.activeElement === lightboxClose ? lightboxNext : lightboxClose).focus();
+        }
+    });
+}
+
+/* Toggle reveal classes only when elements cross the reveal threshold. */
+const revealElements = document.querySelectorAll('.revealUpward, .revealLeft, .revealRight');
+
+let revealFrame = 0;
+
+function updateReveals() {
+    const revealThreshold = window.innerHeight - 150;
+    const updates = Array.from(revealElements, element => ({
+        element,
+        shouldReveal: element.getBoundingClientRect().top < revealThreshold
+    }));
+
+    updates.forEach(({ element, shouldReveal }) => {
+        if (element.classList.contains('active') !== shouldReveal) {
+            element.classList.toggle('active', shouldReveal);
+        }
+    });
+
+    if (projectTimelineTargets.length) {
+        const activationLine = window.innerHeight * 0.42;
+        let activeIndex = 0;
+
+        projectTimelineTargets.forEach((target, index) => {
+            if (target.getBoundingClientRect().top <= activationLine) {
+                activeIndex = index;
+            }
+        });
+
+        projectTimelineLinks.forEach((link, index) => {
+            const isActive = index === activeIndex;
+            link.classList.toggle('active', isActive);
+
+            if (isActive) {
+                link.setAttribute('aria-current', 'location');
+            } else {
+                link.removeAttribute('aria-current');
+            }
+        });
+    }
+
+    revealFrame = 0;
+}
+
+function scheduleRevealUpdate() {
+    if (!revealFrame) {
+        revealFrame = window.requestAnimationFrame(updateReveals);
+    }
+}
+
+window.addEventListener('scroll', scheduleRevealUpdate, { passive: true });
+window.addEventListener('resize', scheduleRevealUpdate);
+scheduleRevealUpdate();
 
 // /* FIUN FACT*/
 // const funFacts = [

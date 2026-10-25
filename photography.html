@@ -4,22 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/logonew.png">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <title>Zayna Sayyed - Mind Splurge</title>
+    <title>Zayna Sayyed - Photography</title>
 </head>
 
-<body>
+<body class="photo-gallery">
 
     <center>
         <div class="nav">
-            <a href="index.html#intro"><img src="assets/logo.png" alt="Logo" height="50"
+            <a href="index.html#intro"><img src="assets/logonew.png" alt="Logo" height="50"
                     style="float: left; position: relative; margin-right: 10px; bottom:10px; margin-bottom: -30px"></a>
             <a href="index.html#portfolio">PORTFOLIO</a>
+            <a href="index.html#experience">EXPERIENCE</a>
             <a href="index.html#art">ART</a>
             <a href="index.html#aboutme">ABOUT ME</a>
             <a href="index.html#contact">CONTACT</a>
@@ -29,33 +30,91 @@
     <h1 class="photoTitle">My Photography</h1>
     <div class="row">
         <div class="column">
-            <img src="assets/photo1.jpg" onclick="openLightbox(0)">
-            <img src="assets/photo2.jpg" onclick="openLightbox(2)">
-            <img src="assets/photo3.jpg" onclick="openLightbox(4)">
-            <img src="assets/photo7.jpg" onclick="openLightbox(10)">
-            <img src="assets/photo8.jpg" onclick="openLightbox(13)">
-            <img src="assets/photo6.5.jpg" onclick="openLightbox(9)">
-            <img src="assets/photo11.jpg" onclick="openLightbox(19)">
+            <img src="assets/photo1.jpg" width="4000" height="6000" loading="lazy" decoding="async" onclick="openLightbox(0)">
+            <img src="assets/photo2.jpg" width="4000" height="5328" loading="lazy" decoding="async" onclick="openLightbox(2)">
+            <img src="assets/photo3.jpg" width="6000" height="4000" loading="lazy" decoding="async" onclick="openLightbox(4)">
+            <img src="assets/photo7.jpg" width="3368" height="6000" loading="lazy" decoding="async" onclick="openLightbox(10)">
+            <img src="assets/photo8.jpg" width="4000" height="6000" loading="lazy" decoding="async" onclick="openLightbox(13)">
+            <img src="assets/photo6.5.jpg" width="4000" height="6000" loading="lazy" decoding="async" onclick="openLightbox(9)">
+            <img src="assets/photo11.jpg" width="4000" height="6000" loading="lazy" decoding="async" onclick="openLightbox(19)">
         </div>
         <div class="column">
-            <img src="assets/photo1.5.jpg" onclick="openLightbox(1)">
-            <img src="assets/photo2.5.jpg" onclick="openLightbox(3)">
-            <img src="assets/photo3.5.jpg" onclick="openLightbox(5)">
-            <img src="assets/photo7.5.jpg" onclick="openLightbox(11)">
-            <img src="assets/photo8.5.jpg" onclick="openLightbox(14)">
-            <img src="assets/photo6.jpg" onclick="openLightbox(8)">
-            <img src="assets/photo11.5.jpg" onclick="openLightbox(20)">
+            <img src="assets/photo1.5.jpg" width="3590" height="5385" loading="lazy" decoding="async" onclick="openLightbox(1)">
+            <img src="assets/photo2.5.jpg" width="3940" height="5248" loading="lazy" decoding="async" onclick="openLightbox(3)">
+            <img src="assets/photo3.5.jpg" width="6000" height="4000" loading="lazy" decoding="async" onclick="openLightbox(5)">
+            <img src="assets/photo7.5.jpg" width="3368" height="6000" loading="lazy" decoding="async" onclick="openLightbox(11)">
+            <img src="assets/photo8.5.jpg" width="4000" height="6000" loading="lazy" decoding="async" onclick="openLightbox(14)">
+            <img src="assets/photo6.jpg" width="4000" height="6000" loading="lazy" decoding="async" onclick="openLightbox(8)">
+            <img src="assets/photo11.5.jpg" width="4000" height="6000" loading="lazy" decoding="async" onclick="openLightbox(20)">
         </div>
         <div class="column">
-            <img src="assets/photo10.jpg" onclick="openLightbox(17)">
-            <img src="assets/photo10.5.jpg" onclick="openLightbox(18)">
-            <img src="assets/photo7.6.jpg" onclick="openLightbox(12)">
-            <img src="assets/photo9.jpg" onclick="openLightbox(15)">
-            <img src="assets/photo9.5.jpg" onclick="openLightbox(16)">
-            <img src="assets/photo5.jpg" onclick="openLightbox(7)">
-            <img src="assets/photo4.jpg" onclick="openLightbox(6)">
+            <img src="assets/photo10.jpg" width="4000" height="6000" loading="lazy" decoding="async" onclick="openLightbox(17)">
+            <img src="assets/photo10.5.jpg" width="4000" height="6000" loading="lazy" decoding="async" onclick="openLightbox(18)">
+            <img src="assets/photo7.6.jpg" width="3368" height="6000" loading="lazy" decoding="async" onclick="openLightbox(12)">
+            <img src="assets/photo9.jpg" width="4000" height="6000" loading="lazy" decoding="async" onclick="openLightbox(15)">
+            <img src="assets/photo9.5.jpg" width="6000" height="4000" loading="lazy" decoding="async" onclick="openLightbox(16)">
+            <img src="assets/photo5.jpg" width="4000" height="6000" loading="lazy" decoding="async" onclick="openLightbox(7)">
+            <img src="assets/photo4.jpg" width="4000" height="6000" loading="lazy" decoding="async" onclick="openLightbox(6)">
         </div>
     </div>
+
+    <script>
+        const galleryImages = document.querySelectorAll('.column img');
+
+        galleryImages.forEach(image => {
+            const decodeImage = () => {
+                if (image.naturalWidth === 0 || typeof image.decode !== 'function') {
+                    image.classList.add('is-loaded');
+                    return;
+                }
+
+                image.decode()
+                    .then(() => image.classList.add('is-loaded'))
+                    .catch(error => {
+                        console.error(`Unable to decode photography image: ${image.currentSrc || image.src}`, error);
+                        if (image.complete && image.naturalWidth > 0) {
+                            image.classList.add('is-loaded');
+                        }
+                    });
+            };
+
+            image.addEventListener('load', decodeImage, { once: true });
+            image.addEventListener('error', () => image.classList.add('is-loaded'), { once: true });
+            if (image.complete && image.naturalWidth > 0) {
+                decodeImage();
+            }
+        });
+
+        const pendingPhotos = new Set(galleryImages);
+        let photoRevealFrame = 0;
+
+        function revealVisiblePhotos() {
+            photoRevealFrame = 0;
+
+            pendingPhotos.forEach(image => {
+                const bounds = image.getBoundingClientRect();
+                if (bounds.top < window.innerHeight + 120 && bounds.bottom > -120) {
+                    image.classList.add('is-in-view');
+                    pendingPhotos.delete(image);
+                }
+            });
+
+            if (!pendingPhotos.size) {
+                window.removeEventListener('scroll', schedulePhotoReveal);
+                window.removeEventListener('resize', schedulePhotoReveal);
+            }
+        }
+
+        function schedulePhotoReveal() {
+            if (!photoRevealFrame) {
+                photoRevealFrame = window.requestAnimationFrame(revealVisiblePhotos);
+            }
+        }
+
+        window.addEventListener('scroll', schedulePhotoReveal, { passive: true });
+        window.addEventListener('resize', schedulePhotoReveal);
+        revealVisiblePhotos();
+    </script>
 
     <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
         <span class="close" onclick="closeLightbox(event)">&times;</span>

@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/logonew.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Peralta&family=Quicksand:wght@300..700&display=swap"
@@ -11,16 +12,17 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script src="script.js" defer></script>
 
-    <title>Zayna Sayyed</title>
+    <title>Zayna Sayyed - Mind Splurge</title>
 </head>
 
-<body>
+<body class="mindsplurge-project">
 
     <center>
         <div class="nav">
-            <a href="index.html#intro"><img src="assets/logo.png" alt="Logo" height="50"
+            <a href="index.html#intro"><img src="assets/logonew.png" alt="Logo" height="50"
                     style="float: left; position: relative; margin-right: 10px; bottom:10px; margin-bottom: -30px"></a>
             <a href="index.html#portfolio">PORTFOLIO</a>
+            <a href="index.html#experience">EXPERIENCE</a>
             <a href="index.html#art">ART</a>
             <a href="index.html#aboutme">ABOUT ME</a>
             <a href="index.html#contact">CONTACT</a>
@@ -56,7 +58,7 @@
             Wireframing
         </div>
         <div class="skillItem">
-            Figma Protoyping
+            Figma Prototyping
         </div>
         <div class="skillItem">
             Usability Testing
@@ -73,12 +75,12 @@
         <div class="ProjSection">
             <h2>Project Description</h2>
             Mind Splurge is a UX design project I completed as part of the Google UX Design Certificate program. Mind
-            Splurge is a California based museum that focuses on the intersection of Art & Psychology.
+            Splurge is a California-based museum that focuses on the intersection of art and psychology.
             <br><br>
             <p><b>The Problem:</b> People don’t have an easy way to book visits or gather info about the museum without
                 navigating third party platforms or speaking directly to a representative.
                 <br><br>
-                <b>The Goal:</b> Creative a single, simple platform where people can get info about the museum, its
+                <b>The Goal:</b> Create a single, simple platform where people can get information about the museum, its
                 work,
                 its events, and book tickets.
             </p>
@@ -96,15 +98,15 @@
             <h2>Phase 1: Understand</h2>
             <p>
                 Conducted qualitative and quantitative research to understand user needs and pain points. This included
-                general user interviews, and research of first hand experiences online.<br><br> I then conducted a
-                compeitive
+                general user interviews, and research of firsthand experiences online.<br><br> I then conducted a
+                competitive
                 audit of five direct and indirect museums/experiences in the US and San Diego, noting their strengths
                 and
                 weaknesses, gaps, and ticket booking processes.
                 <br><br>Some insights from my research include the following:
             <ul>
                 <li>A step by step ticket booking process is preferred, but with as few steps as possible</li>
-                <li>Compeitiors have lots of images and info</li>
+                <li>Competitors have lots of images and information</li>
                 <li>Some competitors tend to have cluttered, overwhelming, hard to navigate interfaces</li>
                 <li>Some gaps include: The offering of numerous languages, and interactivity with other museum-goers
                     (like a community forum)
@@ -116,13 +118,11 @@
             <h2>Phase 2: Define</h2>
             <p>
                 After my research, I created user personas to represent the target audience for Mind Splurge. These
-                personas
-                helped me
-                empathize with users and keep their needs in mind throughout the design process.
-                <br><br>
+                personas helped me empathize with users and keep their needs in mind throughout the design process.
+            </p>
             <div class="personas">
                 <div class="persona">
-                    <img src="assets/jesse.jpg" alt="Photo of Jesse Carpenter persona" height="200px">
+                    <img src="assets/jesse.jpg" alt="Photo of Jesse Carpenter persona">
                     <p><b>Jesse Carpenter: </b>A 67 year old retired IT engineer, and an avid art lover living in San
                         Diego.
                         He
@@ -131,42 +131,42 @@
                         reading problems.</p>
                 </div>
                 <div class="persona">
-                    <img src="assets/ida.jpg" alt="Photo of Ida Neumann persona" height="200px">
-                    <p><b>Ida Neumann: </b> A 29 year old high school counselor from Stuttgard, Germany. Her school is
-                        visiting California for a tip, and she wants to take them to this museum. She is limited by her
-                        budget, and is unfamilar with the area and not fluent in English.</p>
+                    <img src="assets/ida.jpg" alt="Photo of Ida Neumann persona">
+                    <p><b>Ida Neumann: </b> A 29-year-old high school counselor from Stuttgart, Germany. Her school is
+                        visiting California for a trip, and she wants to take them to this museum. She is limited by her
+                        budget, and is unfamiliar with the area and not fluent in English.</p>
                 </div>
             </div>
-            I then created user journey maps to visualize the steps users would take to book tickets and access
+            <p>I then created user journey maps to visualize the steps users would take to book tickets and access
             information on the app and website. This helped me identify pain points and areas for improvement in the
             information gathering and ticket booking processes.
-            <br><br>
-            Finally, I developed my user flow diagrams to outline the specific tasks users would need to complete on
-            the app. <br><br>
-            <img src="assets/mindsplurge_userflow.png" alt="User flow diagram for Mind Splurge" height="300px">
-
-            </p>
+            <br><br>Finally, I developed my user flow diagrams to outline the specific tasks users would need to
+            complete on the app.</p>
+            <div class="mind-image-row mind-image-row--single">
+                <img src="assets/mindsplurge_userflow.png" alt="User flow diagram for Mind Splurge">
+            </div>
         </div>
 
         <div class="ProjSection">
             <h2>Phase 3: Ideate</h2>
             <p>
                 This then allowed me to devlop a storyboard to outline the key features and functionalities of the app
-                and website. I focused on the persona Ida, our German persona, as she goes struggles to book tickets for
+                and website. I focused on the persona Ida, our German persona, as she struggles to book tickets for
                 the
                 school trip without a centralized website vs the process she would undergo <i>with</i> the website.
                 <br><br>
-                <img src="assets/mindsplurge_sb1.jpg"
-                    alt="first storyboard of Ida booking tickets without the website, struggling." height="250px"
-                    style="margin-right: 20px;"><img src="assets/mindsplurge_sb2.jpg"
-                    alt="second storyboard of Ida booking tickets with the website, easily." height="250px">
-                <br><br><br>
-                Finally, I narrowed my information architechture diagram to focus on the most essential pages and
+                Finally, I narrowed my information architecture diagram to focus on the most essential pages and
                 features for the website based on my user flows, personas, and storyboard.
             </p>
-            <br>
-            <img src="assets/mindsplurge_ia.jpg" alt="Information architecture diagram for Mind Splurge" height="300px">
-
+            <div class="mind-image-row">
+                <img src="assets/mindsplurge_sb1.jpg"
+                    alt="First storyboard of Ida booking tickets without the website, struggling.">
+                <img src="assets/mindsplurge_sb2.jpg"
+                    alt="Second storyboard of Ida booking tickets with the website, easily.">
+            </div>
+            <div class="mind-image-row mind-image-row--single">
+                <img src="assets/mindsplurge_ia.jpg" alt="Information architecture diagram for Mind Splurge">
+            </div>
         </div>
 
         <div class="ProjSection">
@@ -174,14 +174,13 @@
             <p>
                 At this point, I was ready to start designing low-fidelity wireframes for the website. I created a few
                 iterations of paper wireframes, focused on a simple, easy to scan layout with clear but informative
-                navigation. I then finalized one, which i tranferred into a low-fidelity figma protoype.
+                navigation. I then finalized one, which I transferred into a low-fidelity Figma prototype.
             </p>
             <br><br>
-            <div class="lofis" style="display: flex; flex-direction: row;">
-                <img src="assets/mindsplurge_lf1.png" alt="Low fidelity wireframe 1 for Mind Splurge" height="250px"
-                    style="margin-right: 20px;"><img src="assets/mindsplurge_lf2.png"
-                    alt="Low fidelity wireframe 2 for Mind Splurge" height="250px" style="margin-right: 20px;"> <img
-                    src="assets/mindsplurge_lf3.png" alt="Low fidelity wireframe 3 for Mind Splurge" height="250px">
+            <div class="mind-image-row lofis">
+                <img src="assets/mindsplurge_lf1.png" alt="Low fidelity wireframe 1 for Mind Splurge">
+                <img src="assets/mindsplurge_lf2.png" alt="Low fidelity wireframe 2 for Mind Splurge">
+                <img src="assets/mindsplurge_lf3.png" alt="Low fidelity wireframe 3 for Mind Splurge">
             </div>
         </div>
 
@@ -201,7 +200,7 @@
                 <ul>
                     <li>"Im lazy, i dont like scrolling" - Participant 1</li>
                 </ul>
-                <li>Users want noticeable CTA’s, such as a more noticable button for booking</li>
+                <li>Users want noticeable calls to action, such as a more noticeable button for booking</li>
                 <li>Users find the UI too large (Want to avoid scrolling at all during ticket booking process)</li>
                 <li>Users rated most tasks easy to complete, rating most a 1 on a scale of 1 to 3 (1 being easiest)
                 </li>
@@ -213,7 +212,7 @@
             <p> Taking my feedback into account, I created high-fidelity mockups of the website in Figma. I focused on
                 improving the navigation by finalizing a persistent nav bar with all key pages, making the call to
                 action buttons
-                more noticable, and condensing information/resizing UI components to reduce scrolling (especially during
+                more noticeable, and condensing information/resizing UI components to reduce scrolling (especially during
                 the
                 ticket booking process.)
 
@@ -224,17 +223,16 @@
                 <br><br>I conducted another round of usability testing with 5 new participants using the high-fidelity
                 prototype, and made a few more changes, such as adding a calendar view for ticket booking.
             </p> <br><br>
-            <div class="hifis" style="display: flex; flex-direction: row;">
-                <img src="assets/mindsplurge_hf1.png" alt="High fidelity mockup 1 for Mind Splurge" height="250px"
-                    style="margin-right: 20px;"><img src="assets/mindsplurge_hf2.png"
-                    alt="High fidelity mockup 2 for Mind Splurge" height="250px" style="margin-right: 20px;"> <img
-                    src="assets/mindsplurge_hf3.png" alt="High fidelity mockup 3 for Mind Splurge" height="250px">
+            <div class="mind-image-row hifis">
+                <img src="assets/mindsplurge_hf1.png" alt="High fidelity mockup 1 for Mind Splurge">
+                <img src="assets/mindsplurge_hf2.png" alt="High fidelity mockup 2 for Mind Splurge">
+                <img src="assets/mindsplurge_hf3.png" alt="High fidelity mockup 3 for Mind Splurge">
             </div>
             <br><br>
 
             <a href="https://www.figma.com/proto/WL2lHqHg2WPGjvjC1VPMKK/MIND-SPLURGE?node-id=138-225&p=f&m=dev&scaling=min-zoom&content-scaling=fixed&page-id=135%3A224&starting-point-node-id=138%3A225"
                 target="_blank">Try
-                out the Figma protoype!</a>
+                out the Figma prototype!</a>
 
         </div>
 
