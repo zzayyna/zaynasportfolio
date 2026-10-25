@@ -23,6 +23,7 @@
         <div class="nav">
             <a href="#intro"><img src="assets/logo.png" alt="Logo" height="50"
                     style="float: left; position: relative; margin-right: 10px; bottom:10px; margin-bottom: -30px"></a>
+            
             <a href="#portfolio">PORTFOLIO</a>
             <a href="#art">ART</a>
             <a href="#aboutme">ABOUT ME</a>
@@ -34,7 +35,7 @@
         <div class="introtext">
             <h1>Howdy! <br> I'm Zayna Sayyed</h1>
             <p>
-                I'm a Computer Science major with minors in Graphic Design and Psychology! <br>
+                I'm a Computer Science major with a minors in Graphic Design! <br>
                 I love to create
                 <i>with</i> people <i>for</i> people! <br> <br>
                 Creating inclusive and accessible experiences means a lot to me, and is how I strive to use my
@@ -162,20 +163,16 @@
         <div class="aboutyap revealRight">
             <img src="assets/me.jpg" alt="me at a coffee shop" width="500" class="revealLeft">
             <p>
-                I'm a 20-year-old Pakistani American who loves watching sitcoms, curating music playlists, and finding
+                I'm a <span id="age"></span>-year-old Pakistani American who loves watching sitcoms, curating music
+                playlists, and finding
                 creative outlets in everyday life. <br><br>
 
                 I’ve visited over twenty countries, my favorite colors are green and purple, I collect rubber duckies,
-                and
-                you’ll rarely catch me without eyeliner on.<br><br>
+                and I love cafe hopping.<br><br>
 
                 I was born in Atlanta, grew up in Houston, and spent ten years in Saudi Arabia where I
-                completed elementary through high school. Moving between cultures shaped how I see the world and how I
-                approach design. I’m naturally curious about people, context, and perspective.<br><br>
-
-                I studied web design in high school, which sparked my interest in development and digital design. Since
-                then, I’ve been passionate about building thoughtful, human-centered experiences that feel both
-                intentional and personal. <br><br>
+                completed elementary through high school. I then came back to Texas for college and have been in College
+                Station ever since. <br><br>
 
                 If you’d like to connect or chat, feel free to reach out!
             </p>
@@ -211,6 +208,14 @@
             document.currentScript.previousElementSibling.textContent = `Zayna Sayyed ${new Date().getFullYear()}`;
         </script>
     </center>
+
+    <script>
+        const birthday = new Date(2005, 6, 10);
+        const today = new Date();
+        let age = today.getFullYear() - birthday.getFullYear();
+        if (today < new Date(today.getFullYear(), birthday.getMonth(), birthday.getDate())) age--;
+        document.getElementById('age').textContent = age;
+    </script>
 
 </body>
 
