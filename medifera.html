@@ -30,26 +30,526 @@
     </center>
     <br><br><br><br><br>
 
-    <div class="ProjSection">
-        <h1>Medifera - Medical Check In App</h1>
-        <p>This page is under development!</p>
+    <div class="projTitle">
+        <div class="inner">
+            <br><br><br><br>
+            <h1>MediFera</h1>
+            <p>A Hybrid Context-Aware Medical Check-in System - Human Computer Interaction Project<br>
+                Role: Product Researcher & Designer<br>
+                Feb - May 2026</p>
+        </div>
+        <img src="assets/medifera_mockup.png" alt="MediFera project mockup" width="600">
     </div>
 
-    <br><br>
-    <center>
-        <footer>
-            <p>Zayna Sayyed</p>
-            <script>
-                document.currentScript.previousElementSibling.textContent = `Zayna Sayyed ${new Date().getFullYear()}`;
-            </script> <a href="https://www.linkedin.com/in/zayna-sayyed/" target="_blank"><img
-                    src="https://img.icons8.com/ios11/512/linkedin.png" height="50"></a>
-            <a href="https://github.com/zzayyna" target="_blank"><img
-                    src="https://www.freeiconspng.com/thumbs/github-logo-icon/github-logo-icon-5.png" height="50"></a>
-            <a href="https://www.instagram.com/by.zzayyna/" target="_blank"><img
-                    src="https://cdn.freebiesupply.com/images/large/2x/instagram-logo-black-transparent.png"
-                    height="50"></a>
-        </footer>
-    </center>
+    <div class="skills">
+        <h2>Skills</h2>
+        <div class="skillItem">
+            User Research
+        </div>
+        <div class="skillItem">
+            User Interviews
+        </div>
+        <div class="skillItem">
+            Iterative Design
+        </div>
+        <div class="skillItem">
+            Product Development
+        </div>
+        <div class="skillItem">
+            Prototyping
+        </div>
+        <div class="skillItem">
+            Usability Testing
+        </div>
+        <div class="skillItem">
+            Teamwork and Collaboration
+        </div>
+        <br><br><br>
+    </div>
+
+    <div class="project-body">
+        <br><br><br>
+        <div class="ProjSection">
+            <h2>Project Description</h2>
+            <p>
+                Medifera is a hybrid context-aware intake experience. Patients can describe their issue to an AI chatbot
+                agent, which then leads them to a personalized intake
+                form. This design aims to reduce confusion and guesswork, decrease the time it takes to complete forms,
+                while offering a better overall UX.
+            </p>
+        </div>
+
+        <div class="ProjSection">
+
+            <h2 class="prompt">Understanding the Problem</h2>
+
+            <p>
+                Medical check-in systems currently tend to require patients to complete lengthy forms with repetitive or
+                irrelevant questions, and many of these questions are presented without sufficient explanation of what
+                they are
+                asking or how they will be used. These forms cause patients confusion, frustration, or
+                misinterpretation. As a
+                result, this leads to inaccurate or rushed responses or questions being skipped altogether. The problem
+                can be
+                broken down into the following pain points:
+            </p>
+
+            <ul class="problem-list">
+                <li>
+                    <strong>Mental Model Misalignment:</strong> Patients expect questions to relate directly to their
+                    visit,
+                    but systems collect broad administrative data without explaining relevance.
+                </li>
+                <li>
+                    <strong>Lack of Transparency:</strong> The system does not communicate why information is required
+                    or how
+                    it will be used.
+                </li>
+                <li>
+                    <strong>High Cognitive Load:</strong> Dense, repetitive, and context-poor forms increase mental
+                    effort,
+                    especially under stress.
+                </li>
+                <li>
+                    <strong>Weak Feedback &amp; Guidance:</strong> Users receive little explanation, validation, or
+                    contextual
+                    support during completion.
+                </li>
+                <li>
+                    <strong>Increased Risk of User Error:</strong> Confusion may lead to rushed, inaccurate, or
+                    incomplete
+                    responses, or form fatigue.
+                </li>
+            </ul>
+
+            <p>
+                To better understand the current state of the situation and how medical check-in forms have been
+                addressed, we
+                researched past attempts to solve this problem.
+            </p>
+
+            <p>
+                One study compared single-page, multi-page, and conversational digital forms through usability tests
+                with 20
+                subjects trying each type of form (Iftikhar et al., 2021). The study reported that “the single-page form
+                outperformed the other two digital forms in almost all usability metrics”. It showed that structure
+                significantly affects usability, task completion time, user satisfaction, and error rates. However, due
+                to the
+                focus on usability, the results of this study did not measure the accuracy of the intake form or address
+                personalization.
+            </p>
+
+            <p>
+                Another attempt compared online forms to virtual conversational agents, in which 391 participants
+                completed a
+                health assessment using a chatbot and an online form (Soni et al., 2022). The results reported that
+                “most
+                participants (69.9%) preferred the chatbot over the online form”. This shows that conversational
+                interfaces
+                boost engagement and preference, though they are less efficient, and the study focused mostly on user
+                experience.
+            </p>
+
+            <p>
+                Finally, one study evaluated emotionally adaptive virtual health assistants, in which participants
+                interacted
+                with AI avatars that respond to users’ emotions (Ashrafi et al., 2025). It found that “Happy/sad avatars
+                increased engagement and trust”. However, the research only had 21 participants, and there is a “need
+                for
+                further research into the impact of emotion-adaptive virtual assistants on user engagement, well-being,
+                and
+                adherence to health recommendations.”
+            </p>
+
+            <p>Based on these approaches and additional research, we’ve found that:</p>
+
+            <ul class="problem-list">
+                <li>
+                    <strong>Usability Is Measured, Understanding Is Not:</strong> Most evaluations prioritize task
+                    completion
+                    time, preference, and satisfaction, rather than assessing whether users understand why information
+                    is
+                    requested.
+                </li>
+                <li>
+                    <strong>Transparency About Data Purpose Remains Minimal:</strong> Reformatting delivery (single-page
+                    or
+                    conversational) does not inherently clarify the relevance or use of individual questions.
+                </li>
+                <li>
+                    <strong>Administrative Priorities Still Shape Design:</strong> Health IT systems emphasize
+                    documentation
+                    completeness and compliance over alignment with patients’ mental models (Ratwani et al., 2015).
+                    Additionally, input accuracy and data quality are rarely evaluated (Weiskopf et al., 2013).
+                </li>
+                <li>
+                    <strong>Standardization Limits Contextual Relevance:</strong> Intake questions remain broad and
+                    generalized, often disconnected from the patient’s specific visit context.
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="ProjSection">
+            <h2>User Survey</h2>
+            <p>
+                We deployed a 16-question survey, which can be found in [Appendix link], to evaluate overall user
+                satisfaction, identify pain points, and discover areas for improvement in current medical forms.
+            </p>
+
+            <h3>Key Survey Findings</h3>
+            <ul>
+                <li>
+                    <strong>Irrelevant Questions:</strong> 81% of users encounter irrelevant questions "Sometimes" or
+                    more frequently (12.5% Always, 25% Often, 43.76% Sometimes).
+                </li>
+                <li>
+                    <strong>Form Length:</strong> 69% of respondents consider current forms to be "Slightly Long" or
+                    "Too Long".
+                </li>
+                <li>
+                    <strong>Accuracy Impact:</strong> 87.5% of users report that the length of a form causes them to
+                    rush or skip answers.
+                </li>
+                <li>
+                    <strong>Abandonment:</strong> 37.5% of users abandon or leave forms incomplete, "Sometimes" or
+                    more.
+                </li>
+                <li>
+                    <strong>Primary Confusion Triggers:</strong> The top sources of user confusion are insurance
+                    terminology, medical history questions, and personal information requests.
+                </li>
+            </ul>
+
+
+        </div>
+
+        <div class="ProjSection">
+            <h2>Requirements Discovery</h2>
+            <p> <strong>1. Have Information/Context About the Question Being Asked:</strong><br>
+
+                Based on surveys, participants have reported having some experiences being confused by medical check-in
+                questions. </p> <br>
+            <p>
+                <strong>2. Add a Personalization Factor:</strong><br>
+
+                Users reported that it felt confusing why they needed to provide certain details that don’t relate to
+                their visit (“Why am I here for a sore throat and you’re asking me how long I’ve been obese”)
+            </p><br>
+            <p><strong>3. Protect User Privacy and Ensure Comfort:</strong><br>
+
+                Many users responses mentioned issues and discomfort with questions feeling invasive. Our design
+                should allow users to share necessary personal information comfortably [6]
+            </p><br>
+            <p> <strong>4. The Form Should Ideally Be a One Pager:</strong><br>
+
+                Most users reported that the length of the form always or somewhat impacts how carefully they answer
+                questions, as well as form abandonment.
+            </p><br>
+            <p>
+                <strong>5. Auto-Fill Returning Patient Info:</strong><br>
+
+                The system should pre-populate known fields (ex. insurance) using data from prior visits or linked
+                records,
+                requiring patients to only review and confirm rather than re-enter already known information.
+            </p><br>
+            <p>
+                <strong>6. Open-Ended Field for Additional Patient Context:</strong><br>
+
+                The form should include an optional free-text field at the end where patients can share any
+                information not captured by structured questions, including urgency, context, or concerns [5]
+
+            </p>
+
+        </div>
+
+
+        <div class="ProjSection">
+            <h2>Design</h2>
+            <p>Based on our requirements, we designed two possible solutions:</p>
+            <ul>
+                <li>
+                    <strong>Solution 1: Improved Traditional Intake Form</strong>
+                    <p>
+                        This solution would maintain the familiarity of a traditional intake form structure, but with
+                        improved
+                        grouped sections, explanations that define confusing terms or explain why a question is being
+                        asked,
+                        the ability for a patient to explain why they skipped a question, and an autofill feature for
+                        returning
+                        users.
+                    </p>
+                </li>
+                <li>
+                    <strong>Solution 2: A Hybrid Context-Aware Intake Experience</strong>
+                    <p>
+                        This solution gathers necessary information and context from the user through a chatbot agent.
+                        That
+                        information shapes a personalized form along with autofilled fields and explanations that define
+                        confusing terms or explain why a question is being asked.
+                    </p>
+                </li>
+            </ul>
+
+            <p>We decided to go with the second design because our survey results support it.</p>
+
+            <p>
+                Based on our requirements and user study findings, we decided to make our application a hybrid
+                context-aware
+                intake form. The process of the app looks like the following:
+            </p>
+
+            <ol>
+                <li>Users create an account for the first time and fill out their medical history, insurance
+                    information, and basic user details.</li>
+                <li>Whenever checking into an appointment, the app displays AI information and asks for consent before
+                    users talk to the chatbot.</li>
+                <li>When the user accepts the terms, they can talk to a chatbot about the symptoms they’re coming in
+                    for.</li>
+                <li>The chatbot asks guiding questions to get more context about the visit.</li>
+                <li>Once the questions are answered, users can give additional information to give the doctor more
+                    specific details.</li>
+                <li>Afterwards, users can review the intake form, which has been automatically filled out based on the
+                    conversation with the chatbot.</li>
+                <li>Users can change content in the form in case they want to edit or add more information.</li>
+                <li>Once finalized, users submit the form to the doctor for the upcoming appointment.</li>
+            </ol>
+
+            <p>We based our process on the requirements we gathered.</p>
+
+            <figure>
+                <img src="assets/medifera1.png" alt="MediFera home screen" width="300">
+                <figcaption>Figure 1: Home screen for our medical intake app, MediFera</figcaption>
+            </figure>
+            <p>
+                To meet requirement 1, we ensured that questions use simple language to make more sense. Each question
+                also has
+                further information in case the user wants to know why it is being asked or wants more context for
+                clarity.
+            </p>
+
+            <figure>
+                <img src="assets/medifera2.png" alt="Popup giving additional context for a question" width="300">
+                <figcaption>Figure 2: Popup for when the user needs additional context</figcaption>
+            </figure>
+            <p>
+                For requirement 2, we designed the app with a chatbot to add a conversational element to our product.
+                This
+                creates a more personal intake experience and makes questions more relevant to the visit. It also
+                supports
+                requirement 3, as it ensures that no invasive questions are asked, only the ones that are needed.
+            </p>
+
+            <figure>
+                <img src="assets/medifera3.png" alt="Chatbot used to collect intake information" width="300">
+                <figcaption>Figure 3: Chatbot used to collect information</figcaption>
+            </figure>
+            <p>
+                Since our application reuses medical history, insurance, and user information once it’s filled out,
+                users don’t
+                have to spend unnecessary time re-entering it. Information from the chatbot conversation also autofills
+                the
+                intake form, making the process much faster and more enjoyable. This fulfills requirements 4 and 5, as
+                autofill
+                shortens the form. Lastly, there’s room to add additional information for doctors in case other
+                questions didn’t
+                cover it, fulfilling requirement 6.
+            </p>
+
+            <figure>
+                <img src="assets/medifera4.png" alt="Additional concerns option for users" width="300">
+                <figcaption>Figure 4: Additional concerns option for users</figcaption>
+            </figure>
+            <p>
+                We concluded that this design worked best because it shortens the intake form, making the process much
+                faster,
+                lessens work and cognitive load, and ensures all the questions asked are relevant and easy to
+                understand. We
+                built our application using React Native and the Expo framework, with a backend using Supabase and
+                PostgreSQL.
+            </p>
+        </div>
+
+        <div class="ProjSection">
+            <h2>Evaluation</h2>
+            <p>
+                We recruited 6 adults who have completed medical forms in the past, and had each of them fill out a
+                consent
+                form and receive a briefing of the study. Participants were informed
+                that they may stop at any time and completed the study using fictional medical scenarios rather than
+                real
+                personal health data.
+            </p>
+            <p>
+                The goal of this evaluation was to test the effectiveness of a chatbot-assisted medical check-in system
+                compared to traditional form-based check-in, evaluating clarity, task success, trust, comfort, and
+                overall
+                satisfaction through observation, a six-point task survey, and semi-structured interviews.
+            </p>
+
+            <p>
+                Participants began by filling out a traditional paper medical check-in form, and then used our app,
+                MediFera,
+                while completing specific tasks for each. As participants went through them, the evaluator took notes on
+                metrics
+                such as time on task, errors, guesses, and any notable quotes.
+            </p>
+
+            <p>
+                After the observation, participants filled out a survey using a 5-point Likert scale, with open-ended
+                follow-ups. It covered their satisfaction with the product, comfort using the AI, and their thoughts on
+                specific
+                features of the app.
+            </p>
+
+            <p>
+                Finally, the study concluded with a semi-structured interview. We asked participants to compare their
+                experience with the app to the traditional form in terms of confusion and comfort with the AI, and to go
+                into
+                depth on what they particularly liked or disliked.
+            </p>
+        </div>
+
+        <div class="ProjSection">
+            <h2>Results</h2>
+            <p>
+                Evaluation involved 6 adult participants who had prior experience with medical check-in forms. Each
+                completed
+                both a traditional paper intake form and the MediFera app under observation, followed by a survey and
+                interview.
+            </p>
+
+            <p>
+                Observations showed a big change in performance. Traditional forms took participants an average of 18
+                minutes,
+                with an average of 5 errors and 3 instances of guessing or Googling answers. Notably, none of the
+                participants
+                completed the entire traditional form, and they expressed frustration with irrelevant or invasive
+                questions.
+                In contrast, MediFera averaged 7 minutes to complete (with AI-autofilled forms taking as little as 31
+                seconds to
+                review), 2 errors, and fewer than 1 guess. Multiple participants completed the core workflow with zero
+                errors.
+            </p>
+
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Traditional Form</th>
+                        <th>MediFera</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Average Time on Task</td>
+                        <td>18 minutes</td>
+                        <td>7 minutes</td>
+                    </tr>
+                    <tr>
+                        <td>Average Errors</td>
+                        <td>5</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Average Guesses</td>
+                        <td>3</td>
+                        <td>&lt; 1</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Survey results (n=6) showed high scores across most dimensions:</p>
+            <ul>
+                <li>Questions felt relevant to the visit: <strong>4.7/5</strong></li>
+                <li>Reasonable completion time: <strong>4.5/5</strong></li>
+                <li>Ease of completion: <strong>4.3/5</strong></li>
+                <li>Preference over traditional forms: <strong>4.3/5</strong></li>
+                <li>Overall experience, willingness to use again, and understanding of why questions were asked:
+                    <strong>4.2/5</strong> each
+                </li>
+                <li>AI trust: <strong>3.75/5</strong> (lowest rated, just short of our 4.0 goal)</li>
+            </ul>
+
+            <p>
+                Across our defined goals (Efficiency &amp; Relevance, Task Success, Transparency &amp; Understanding,
+                and Overall
+                Satisfaction), all met their targets. Trust was the only area flagged for improvement, as the AI trust
+                score of
+                3.75/5 did not reach the 4.0 threshold. Comfort with sharing medical information through the chatbot
+                rated
+                higher at 4.0/5, and fewer than half of participants expressed active hesitation during interviews.
+            </p>
+            <p>
+                The 7-minute average completion did not meet our 4-minute efficiency goal. However, the gap is largely
+                attributable to the conversational AI onboarding phase rather than the form itself. AI-autofilled forms
+                took as
+                little as 31 seconds to review, suggesting the original time goal may have underestimated the full scope
+                of the
+                intended task.
+            </p>
+        </div>
+
+        <div class="ProjSection">
+            <h2>Demo</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/pb6GlM2hCp4"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="ProjSection">
+            <h2>Reflection</h2>
+            <p>
+                This project was a great opportunity to learn about the design process and how to create a product that
+                is
+                user-friendly and effective. I learned how to conduct user research, analyze data, and create a
+                full-stack application based on user needs.
+
+                Even beyond the project itself, the Human Computer Interaction course taught me how to think about
+                design in a more user-centered way, and how to create products that are not only functional but also
+                enjoyable to use. It was great being able to take what I learned in class and apply it to a real-world
+                project.<br><br>
+
+                From identifying a problem, delving deep into research on that problem, it was amazing to seehow simply
+                better understanding an unfamiliar area carried over into the design process so effectively. Despite the
+                fact that I have filled out medical forms myself, being able to better understand other peoples'
+                experience with this product and process was essential to developing a good solution. For example, if it
+                werent for our survey and user-interviews, we may have overlooked the common user request for an
+                autofill feature, or improved trust in the AI.<br><br>
+
+                Overall, this
+                project was a valuable learning experience that helped me develop my skills as a designer and
+                researcher.
+
+            </p>
+
+            <hr>
+            <p>Team Stickers: Julia Arukakkal, Naomi Dao,
+                Anthony Guzman,
+                Emily Kim,
+                Zayna Sayyed</p>
+
+
+
+        </div>
+
+        <br><br>
+        <center>
+            <footer>
+                <p>Zayna Sayyed</p>
+                <script>
+                    document.currentScript.previousElementSibling.textContent = `Zayna Sayyed ${new Date().getFullYear()}`;
+                </script> <a href="https://www.linkedin.com/in/zayna-sayyed/" target="_blank"><img
+                        src="https://img.icons8.com/ios11/512/linkedin.png" height="50"></a>
+                <a href="https://github.com/zzayyna" target="_blank"><img
+                        src="https://www.freeiconspng.com/thumbs/github-logo-icon/github-logo-icon-5.png"
+                        height="50"></a>
+                <a href="https://www.instagram.com/by.zzayyna/" target="_blank"><img
+                        src="https://cdn.freebiesupply.com/images/large/2x/instagram-logo-black-transparent.png"
+                        height="50"></a>
+            </footer>
+        </center>
 </body>
 
 </html>
